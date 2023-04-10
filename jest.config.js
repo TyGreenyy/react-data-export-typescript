@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'react-data-export-jest',
+    name: 'react-data-export-typescript-jest',
     verbose: true,
     collectCoverage: true,
     coveragePathIgnorePatterns: [

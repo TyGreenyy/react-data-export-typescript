@@ -1,4 +1,4 @@
-/* index.d.ts (C) react-data-export */
+/* index.d.ts (C) react-data-export-typescript */
 
 // TypeScript Version: 2.2
 declare module 'react-data-export-typescript' {
