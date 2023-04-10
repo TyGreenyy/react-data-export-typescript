@@ -1,35 +1,35 @@
 {
-  "name": "react-data-export",
+  "name": "react-data-export-typescript",
   "version": "0.6.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "description": "A set of tools to export dataset from react to different formats.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/securedeveloper/react-data-export.git"
+    "url": "git+https://github.com/TyGreenyy/react-data-export-typescript.git"
   },
   "keywords": [
-    "react-data-export",
+    "react-data-export-typescript",
     "react-dataset",
     "react-export",
-    "react-excel-export"
+    "react-excel-export-typescript"
   ],
   "author": "Afzal Ahmad <securedeveloper@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/securedeveloper/react-data-export/issues"
+    "url": "https://github.com/securedeveloper/react-data-export-typescript/issues"
   },
-  "homepage": "https://github.com/securedeveloper/react-data-export#readme",
+  "homepage": "https://github.com/securedeveloper/react-data-export-typescript#readme",
   "dependencies": {
-    "file-saver": "1.3.3",
-    "tempa-xlsx": "0.0.1"
+    "file-saver": "2.0.5",
+    "tempa-xlsx": "0.8.20"
   },
   "devDependencies": {
     "@commitlint/cli": "6.1.3",
     "@commitlint/config-conventional": "6.1.3",
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "8.0.1",
+    "babel-eslint": "10.1.0",
     "babel-jest": "22.4.1",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-es2015": "6.24.1",
@@ -48,11 +48,11 @@
     "jest": "^23.6.0",
     "jest-environment-node": "22.4.1",
     "nyc": "11.2.1",
-    "prop-types": "15.6.0",
-    "react": "16.0.0",
-    "react-dom": "16.0.1",
+    "prop-types": "15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "standard-version": "^4.4.0",
-    "xlsx": "^0.14.0"
+    "xlsx": "0.18.5"
   },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",

@@ -8,7 +8,7 @@ declare module 'react-data-export' {
     filename?: string;
     fileExtension?: string;
     element?: any; //Download Element
-    children?: Array<React.ReactChild> | React.ReactChild; // Array<ExcelSheetProps>;
+    children?: Array<React.ReactElement> | React.ReactElement; // Array<ExcelSheetProps>;
   }
 
   export interface ExcelSheetProps {
@@ -16,22 +16,27 @@ declare module 'react-data-export' {
     data?: Array<object>;
     dataSet?: Array<ExcelSheetData>;
     value?: Array<string> | Function;
-    children?: Array<React.ReactChild> | React.ReactChild; // Array<ExcelColumnProps>
+    children?: Array<React.ReactElement> | React.ReactElement; // Array<ExcelColumnProps>
   }
 
   export interface ExcelSheetData {
     xSteps?: number;
     ySteps?: number;
-    columns: Array<string>;
-    data: Array<ExcelCellData>;
+    columns: Array<string> | Array<ExcelCellHeader>;
+    data: Array<Array<ExcelCellData>>;
   }
 
-  export type ExcelCellData = ExcelValue | ExcelCell | Array<ExcelValue>;
+  export interface ExcelCellHeader {
+    title: string;
+    style?: ExcelStyle;
+  }
+
+  export type ExcelCellData = ExcelValue | ExcelCell;
   export type ExcelValue = string | number | Date | boolean;
 
   export interface ExcelCell {
-    value: ExcelCell;
-    style: ExcelStyle;
+    value: ExcelValue;
+    style?: ExcelStyle;
   }
 
   export interface ExcelColumnProps {
@@ -96,7 +101,7 @@ declare module 'react-data-export' {
 
   export type ExcelTextRotation = 0 | 45 | 90 | 135 | 180 | 255;
 
-  export enum ExcelReadingOrder { LeftToRight = 1, RightToLeft}
+  export enum ExcelReadingOrder { LeftToRight = 1, RightToLeft }
 
   export type ExcelAlignmentType = "bottom" | "center" | "top";
 
@@ -122,15 +127,15 @@ declare module 'react-data-export' {
 
   export class ExcelColumn extends React.Component<ExcelColumnProps, any> {
   }
-
   export class ExcelSheet extends React.Component<ExcelSheetProps, any> {
   }
-
   export class ExcelFile extends React.Component<ExcelFileProps, any> {
   }
 
   export namespace ReactExport {
     export class ExcelFile extends React.Component<ExcelFileProps, any> {
+      static ExcelSheet: React.ElementType<ExcelSheetProps>;
+      static ExcelColumn: React.ElementType<ExcelColumnProps>;
     }
   }
   export default ReactExport
